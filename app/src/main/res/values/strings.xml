@@ -3,4 +3,5 @@
     <string name="show_login">SHOW LOGIN</string>
     <string name="home_activity">Home</string>
     <string name="hide_login">HIDE LOGIN</string>
+    <string name="jump_activity">JUMP ACTIVITY</string>
 </resources>

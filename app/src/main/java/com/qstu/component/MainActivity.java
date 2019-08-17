@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import base_component.login.LoginService;
 import base_component.login.api.LoginApi;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mBtnShowFragment;
     private Button mBtnHideFragment;
+    private Button mBtnJumpLoginActivity;
 
     private FrameLayout mContainer;
 
@@ -32,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     private void initListener() {
         mBtnShowFragment.setOnClickListener(v->showLoginFragment());
         mBtnHideFragment.setOnClickListener(v->hideFragment());
+        mBtnJumpLoginActivity.setOnClickListener(v->jumpLoginActivity());
+    }
+
+    private void jumpLoginActivity() {
+        ARouter.getInstance().build("/login/activity").navigation();
     }
 
     private void showLoginFragment() {
@@ -72,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         mBtnShowFragment = findViewById(R.id.show_login);
         mBtnHideFragment = findViewById(R.id.hide_login);
+        mBtnJumpLoginActivity = findViewById(R.id.jump_login_activity);
         mContainer = findViewById(R.id.component_container);
     }
 }

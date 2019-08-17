@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.qstu.login.component.LoginFragment;
 
 import base_component.login.api.LoginApi;
 
+@Route(path = "/login/activity")
 public class LoginActivity extends AppCompatActivity {
 
     private Button mBtnShowFragment;
