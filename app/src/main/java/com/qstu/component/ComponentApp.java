@@ -12,6 +12,11 @@ public class ComponentApp extends BaseApp {
 
 
     @Override
+    protected boolean isDebug() {
+        return BuildConfig.DEBUG;
+    }
+
+    @Override
     public void initModule(Application application) {
         for (int i = 0; i < BaseConfig.COMPONENT_PATH.length; i++){
             String componentPath = BaseConfig.COMPONENT_PATH[i];
