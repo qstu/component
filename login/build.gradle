@@ -1,18 +1,36 @@
-apply plugin: 'com.android.application'
+if(isComponentProject.toBoolean()){
+    apply plugin: 'com.android.application'
+}else{
+    apply plugin: 'com.android.library'
+}
 
 android {
-    compileSdkVersion 28
-
+    compileSdkVersion compile_sdk_version.toInteger()
 
     defaultConfig {
-        applicationId "com.qstu.login"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        if(isComponentProject.toBoolean()){
+            applicationId "com.qstu.login"
+        }
+        minSdkVersion min_sdk_version.toInteger()
+        targetSdkVersion target_sdk_version.toInteger()
+        versionCode version_code.toInteger()
+        versionName version_name.toString()
+
+        resourcePrefix 'login'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+    }
+
+    sourceSets {
+        main {
+            if(isComponentProject.toBoolean()){
+                manifest.srcFile('src/main/manifest/AndroidManifest.xml')
+            }else{
+                manifest.srcFile('src/main/AndroidManifest.xml')
+            }
+
+        }
     }
 
     buildTypes {
@@ -21,13 +39,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = source_compatibility.toString()
+        targetCompatibility = target_compatibility.toString()
+    }
 
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':base')
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

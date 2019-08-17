@@ -3,38 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:layout_height="wrap_content">
         <TextView
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/home_activity" />
+            android:text="@string/login_login_activity" />
 
         <Button
-            android:id="@+id/show_login"
-            style="@style/TextAppearance.AppCompat.Button"
+            android:id="@+id/show_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/show_login" />
-
+            android:text="@string/login_show_fragment" />
         <Button
-            android:id="@+id/hide_login"
-            style="@style/TextAppearance.AppCompat.Button"
+            android:id="@+id/hide_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hide_login"/>
-
+            android:text="@string/login_hide_fragment" />
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/component_container"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </FrameLayout>

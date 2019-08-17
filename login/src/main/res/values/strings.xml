@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">login</string>
+    <string name="login_app_name">login</string>
+    <string name="login_login_fragment">Login Fragment</string>
+    <string name="login_login_dialog_fragment">Login Dialog Fragment</string>
+    <string name="login_login_activity">Login Activity</string>
+    <string name="login_show_fragment">Show Fragment</string>
+    <string name="login_hide_fragment">Hide Fragment</string>
 </resources>
